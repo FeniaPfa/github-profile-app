@@ -2,20 +2,21 @@ import { IconButton, Stack, TextField, InputAdornment, useTheme } from "@mui/mat
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
-function Search({ inputUser , serInputUser }) {
+function Search({ setInputUser }) {
 
     const [valueInput, setValueInput] = useState('')
 
     const onSearchValueChange = (e) =>{
         const inputValue = e.target.value
         setValueInput(inputValue)
-        console.log(valueInput);
+        // console.log(valueInput);
     }
 
     const handleSearch = () => {
-        console.log("search")
+        setInputUser(valueInput)
+        
     };
-
+    
     return (
         <Stack
             direction="row"
@@ -47,11 +48,7 @@ function Search({ inputUser , serInputUser }) {
                     ),
                 }}
             />
-            {/* <IconButton sx={{
-            left: "-50px"
-            }}>
-            <SearchIcon />
-            </IconButton> */}
+            
         </Stack>
     );
 }

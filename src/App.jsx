@@ -1,11 +1,21 @@
 import { Container } from "@mui/material"
 import Search from "./components/Search"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getData } from "./services/users"
 
 function App() {
 
-  const[userStarter, userState] = useState("octocat")
-  const[inputUser, setInputUser] = useState("userState")
+  const[userStarter, userState] = useState("userState")
+  const[inputUser, setInputUser] = useState("octocat")
+
+  const getUser = async (user) => {
+    const userData = await getData(user)
+    console.log(userData);
+  }
+
+  useEffect(() => {
+    getUser(inputUser)
+  },[])
   
 
   return (
