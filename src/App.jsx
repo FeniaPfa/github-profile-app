@@ -2,20 +2,36 @@ import { Container } from "@mui/material"
 import Search from "./components/Search"
 import { useEffect, useState } from "react"
 import { getData } from "./services/users"
+import { Iron } from "@mui/icons-material"
 
 function App() {
 
-  const[userStarter, userState] = useState("userState")
-  const[inputUser, setInputUser] = useState("octocat")
+  const [inputUser, setInputUser] = useState("octocat")
+  const [userState, setUserState] = useState("inputUser")
+  const [notFound, setNotFound] = useState(false)
 
   const getUser = async (user) => {
     const userData = await getData(user)
-    console.log(userData);
+
+    if(userState === "octocat"){
+      localStorage.setItem("octocat", userData)
+    }
+
+    if(userData.message === "Not Found"){
+      const {octocat} = localStorage
+      setInputUser(octocat)
+      setNotFound(true)
+    } else {
+      setUserState(userData)
+    }
+
   }
+  console.log(userState);
+
 
   useEffect(() => {
     getUser(inputUser)
-  },[])
+  },[inputUser])
   
 
   return (
