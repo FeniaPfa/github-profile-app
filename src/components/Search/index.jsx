@@ -9,13 +9,17 @@ function Search({ setInputUser }) {
     const onSearchValueChange = (e) =>{
         const inputValue = e.target.value
         setValueInput(inputValue)
-        // console.log(valueInput);
     }
 
     const handleSearch = () => {
         setInputUser(valueInput)
         
     };
+    const handleEnter = (e) =>{
+        if(e.keyCode === 13){
+            handleSearch() 
+        }
+    }
     
     return (
         <Stack
@@ -26,6 +30,7 @@ function Search({ setInputUser }) {
             }}
         >
             <TextField
+                onKeyDown={handleEnter}
                 onChange={onSearchValueChange}
                 id="outlined-basic"
                 placeholder="Octocat"

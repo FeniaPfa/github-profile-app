@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography, Link } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -10,29 +10,36 @@ const Location = ({
     userState: { location, twitter_username, blog, company },
 }) => {
     return (
-        <Grid container>
+        <Grid container spacing={2} sx={{marginTop: "15px"}}>
             <Grid item xs={6}>
-                <Stack direction="row">
-                    <LocationOnIcon />
+                <Stack direction="row" spacing={2}>
+                    <LocationOnIcon color="primary"/>
                     <Typography>{location}</Typography>
                 </Stack>
             </Grid>
             <Grid item xs={6}>
-                <Stack direction="row">
-                  <TwitterIcon />
-                  <Typography>{(twitter_username) ? `@${twitter_username}` : "Not Available"}</Typography>
+                <Stack direction="row" spacing={2}>
+                    <TwitterIcon color="primary"/>
+                    <Typography>
+                        {twitter_username
+                            ? `@${twitter_username}`
+                            : "Not Available"}
+                    </Typography>
                 </Stack>
             </Grid>
             <Grid item xs={6}>
-                <Stack direction="row">
-                  <BusinessIcon />
-                  <Typography>{(company) ? company : "Not Available"}</Typography>
+                <Stack direction="row" spacing={2}>
+                    <LanguageIcon color="primary"/>
+                    <Link variant="body1" href={blog} target="_blank" rel="noreferrer" underline="hover">{blog ? blog : "Not Available"}</Link>
                 </Stack>
             </Grid>
+
             <Grid item xs={6}>
-                <Stack direction="row">
-                  <LanguageIcon />
-                  <Typography>{(blog) ? blog : "Not Available"}</Typography>
+                <Stack direction="row" spacing={2}>
+                    <BusinessIcon color="primary"/>
+                    <Typography>
+                        {company ? company : "Not Available"}
+                    </Typography>
                 </Stack>
             </Grid>
         </Grid>

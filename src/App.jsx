@@ -35,11 +35,12 @@ function App() {
   
 
   return (
+
     <div className="App">
       <Container sx={{
         background: 'whitesmoke',
         width: '80vw',
-        height: '500px',
+        height: {xs: "100%", md: "80vh", lg: "500px"},
         borderRadius: '16px',
         marginTop: '40px',
         display: 'flex',
@@ -51,6 +52,7 @@ function App() {
         <UserCard userState={userState}/>
       </Container>
     </div>
+
   )
 }
 
