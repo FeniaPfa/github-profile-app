@@ -2,7 +2,7 @@ import { Container } from "@mui/material"
 import Search from "./components/Search"
 import { useEffect, useState } from "react"
 import { getData } from "./services/users"
-import { Iron } from "@mui/icons-material"
+import UserCard from "./components/UserCard"
 
 function App() {
 
@@ -48,7 +48,7 @@ function App() {
 
       }}>
         <Search inputUser={inputUser} setInputUser={setInputUser}/>
-        
+        <UserCard userState={userState}/>
       </Container>
     </div>
   )
