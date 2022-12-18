@@ -11,13 +11,13 @@ const Location = ({
 }) => {
     return (
         <Grid container spacing={2} sx={{marginTop: "15px"}}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Stack direction="row" spacing={2}>
                     <LocationOnIcon color="primary"/>
                     <Typography>{location}</Typography>
                 </Stack>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Stack direction="row" spacing={2}>
                     <TwitterIcon color="primary"/>
                     <Typography>
@@ -27,14 +27,15 @@ const Location = ({
                     </Typography>
                 </Stack>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Stack direction="row" spacing={2}>
                     <LanguageIcon color="primary"/>
-                    <Link variant="body1" href={blog} target="_blank" rel="noreferrer" underline="hover">{blog ? blog : "Not Available"}</Link>
+                    {(blog) ? <Link variant="body1" href={blog} target="_blank" rel="noreferrer" underline="hover">{blog}</Link> : <Typography>Not Available</Typography>}
+                    
                 </Stack>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Stack direction="row" spacing={2}>
                     <BusinessIcon color="primary"/>
                     <Typography>

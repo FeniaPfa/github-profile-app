@@ -1,4 +1,4 @@
-import { IconButton, Stack, TextField, InputAdornment, useTheme } from "@mui/material";
+import { Stack, TextField, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 

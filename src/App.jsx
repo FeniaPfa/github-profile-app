@@ -40,13 +40,13 @@ function App() {
       <Container sx={{
         background: 'whitesmoke',
         width: '80vw',
-        height: {xs: "100%", md: "80vh", lg: "500px"},
+        height: {xs: "100%", md: "500px", lg: "500px"},
         borderRadius: '16px',
         marginTop: '40px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
-
+        alignItems: 'center',
+        boxShadow: "4px 8px 19px -3px #00000036"
       }}>
         <Search inputUser={inputUser} setInputUser={setInputUser}/>
         <UserCard userState={userState}/>
