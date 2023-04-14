@@ -2,7 +2,7 @@ import { Stack, TextField, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
-function Search({ setInputUser }) {
+function Search({ setInputUser, notFound }) {
 
     const [valueInput, setValueInput] = useState('')
 
@@ -29,16 +29,16 @@ function Search({ setInputUser }) {
                 width: "80%",
             }}
         >
+
             <TextField
+                error={notFound}
+                label="Github User"
+                placeholder="Octocat"
+                // value={valueInput}
+                variant="outlined"
+                size="medium"
                 onKeyDown={handleEnter}
                 onChange={onSearchValueChange}
-                id="outlined-basic"
-                placeholder="Octocat"
-                // defaultValue="Octocat"
-                value={valueInput}
-                label="Github User"
-                variant="outlined"
-                size="small"
                 sx={{
                     width: "90%",
                     margin: "0 auto",
@@ -52,7 +52,31 @@ function Search({ setInputUser }) {
                         </InputAdornment>
                     ),
                 }}
-            />
+            /> 
+            
+            {/* <TextField
+            error
+            label="Usuario no encontrado"
+            placeholder="Octocat"
+            value={valueInput}
+            variant="outlined"
+            size="small"
+            onKeyDown={handleEnter}
+            onChange={onSearchValueChange}
+            sx={{
+                width: "90%",
+                margin: "0 auto",
+            }}
+            InputProps={{
+                endAdornment: (
+                    <InputAdornment position="end">
+                        <SearchIcon color="error" sx={{
+                            cursor: "pointer"
+                        }} onClick={handleSearch}/>
+                    </InputAdornment>
+                ),
+            }}
+        /> */}
             
         </Stack>
     );
