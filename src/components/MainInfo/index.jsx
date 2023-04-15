@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 
-const MainInfo = ({ userState: { name, login, created_at } }) => {
+const MainInfo = ({ userState: { name, login, created_at, html_url } }) => {
     return (
         <>
             <Stack direction="row" sx={{ justifyContent: "space-between" }}>
@@ -11,7 +11,11 @@ const MainInfo = ({ userState: { name, login, created_at } }) => {
                     {new Date(created_at).toLocaleDateString("en-us")}
                 </Typography>
             </Stack>
-            <Typography variant="caption">@{login}</Typography>
+            <Typography fontWeight="bold">
+                <Link href={html_url} underline="none" fontSize="medium">
+                @{login}
+                </Link>
+                </Typography>
         </>
     );
 };

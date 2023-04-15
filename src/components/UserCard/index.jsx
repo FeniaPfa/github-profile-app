@@ -5,7 +5,7 @@ import MainInfo from "../MainInfo";
 
 const UserCard = ({ userState, userState: { avatar_url } }) => {
     return (
-        <Grid container spacing={2} sx={{marginTop: "15px"}}>
+        <Grid container spacing={2} sx={{padding: "2rem"}}>
             <Grid item lg={3} md={5} xs={12}>
                 <Avatar alt="GitHub User Avatar" src={avatar_url} sx={{width: {xs: "75%", md:"100%", lg: "100%"}, height:"auto", margin: "auto"}} />
             </Grid>

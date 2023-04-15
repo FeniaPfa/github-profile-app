@@ -54,30 +54,6 @@ function Search({ setInputUser, notFound }) {
                 }}
             /> 
             
-            {/* <TextField
-            error
-            label="Usuario no encontrado"
-            placeholder="Octocat"
-            value={valueInput}
-            variant="outlined"
-            size="small"
-            onKeyDown={handleEnter}
-            onChange={onSearchValueChange}
-            sx={{
-                width: "90%",
-                margin: "0 auto",
-            }}
-            InputProps={{
-                endAdornment: (
-                    <InputAdornment position="end">
-                        <SearchIcon color="error" sx={{
-                            cursor: "pointer"
-                        }} onClick={handleSearch}/>
-                    </InputAdornment>
-                ),
-            }}
-        /> */}
-            
         </Stack>
     );
 }

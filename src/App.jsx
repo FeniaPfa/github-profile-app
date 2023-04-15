@@ -33,6 +33,7 @@ function App() {
     return (
         <div className="App">
             <Container
+            maxWidth="md"
                 sx={{
                     background: 'whitesmoke',
                     width: '80vw',
