@@ -1,4 +1,4 @@
-import { Box, Paper, Stack, Typography } from '@mui/material';
+import { Paper, Stack, Typography } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import GroupIcon from '@mui/icons-material/Group';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
@@ -12,7 +12,7 @@ const PaperInfo = ({ userState: { public_repos, followers, following } }) => {
                 spacing={3}
                 sx={{ justifyContent: 'space-evenly', margin: '20px' }}>
                 <Stack direction="row" gap="1rem" alignItems="center">
-                    <LibraryBooksIcon fontSize="large" />
+                    <LibraryBooksIcon fontSize="large" color='secondary'/>
                     <Stack>
                         <Typography fontWeight="bold" variant="body1">Repos</Typography>
                         <Typography variant="h6">{public_repos}</Typography>
@@ -20,7 +20,7 @@ const PaperInfo = ({ userState: { public_repos, followers, following } }) => {
                 </Stack>
 
                 <Stack direction="row" gap="1rem" alignItems="center">
-                    <GroupIcon fontSize="large" />
+                    <GroupIcon fontSize="large" color='secondary'/>
                     <Stack>
                         <Typography fontWeight="bold" variant="body1">Followers</Typography>
                         <Typography variant="h6">{followers}</Typography>
@@ -28,7 +28,7 @@ const PaperInfo = ({ userState: { public_repos, followers, following } }) => {
                 </Stack>
 
                 <Stack direction="row" gap="1rem" alignItems="center">
-                    <GroupAddIcon fontSize="large" />
+                    <GroupAddIcon fontSize="large" color='secondary'/>
 
                     <Stack>
                         <Typography fontWeight="bold" variant="body1">Following</Typography>
