@@ -1,5 +1,4 @@
-import { Link, Typography } from '@mui/material';
-import { Stack } from '@mui/system';
+import { Link, Typography, Stack } from '@mui/material';
 
 const ContactInfo = ({ userState: { name, login, created_at, html_url } }) => {
     return (
