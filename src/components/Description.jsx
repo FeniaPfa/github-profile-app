@@ -1,14 +1,13 @@
-import { Typography, Stack } from "@mui/material";
-import React from "react";
-import Location from "../Location";
-import PaperInfo from "../PaperInfo";
+import { Typography, Stack } from '@mui/material';
+import Location from './Location';
+import PaperInfo from './PaperInfo';
 
 const Description = ({ userState, userState: { bio } }) => {
     return (
         <>
-            <Stack sx={{ justifyContent: "center" }}>
+            <Stack sx={{ justifyContent: 'center' }}>
                 <Typography variant="body1">
-                    {!bio ? "lorem ipsum dolor sit amet" : bio}
+                    {!bio ? 'lorem ipsum dolor sit amet' : bio}
                 </Typography>
             </Stack>
             <PaperInfo userState={userState} />
