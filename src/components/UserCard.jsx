@@ -1,7 +1,6 @@
 import { Avatar, Grid, Stack } from '@mui/material';
-import React from 'react';
-import Description from '../Description';
-import MainInfo from '../MainInfo';
+import ContactInfo from './CotactInfo';
+import Description from './Description';
 
 const UserCard = ({ userState, userState: { avatar_url } }) => {
     return (
@@ -14,13 +13,13 @@ const UserCard = ({ userState, userState: { avatar_url } }) => {
                         width: { xs: '75%', md: '100%', lg: '100%' },
                         height: 'auto',
                         margin: 'auto',
-                        border:'5px solid #005100'
+                        border: '5px solid #005100',
                     }}
                 />
             </Grid>
             <Grid item lg={9} md={7} xs={12}>
                 <Stack direction="column" spacing={1} sx={{ margin: '20px' }}>
-                    <MainInfo userState={userState} />
+                    <ContactInfo userState={userState} />
                     <Description userState={userState} />
                 </Stack>
             </Grid>
